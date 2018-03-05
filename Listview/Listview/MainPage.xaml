@@ -5,32 +5,34 @@
              x:Class="Listview.MainPage"
              BackgroundImage="ground.jpg">
     <StackLayout>
-        <StackLayout BackgroundColor="#dcb34a">
+        <StackLayout BackgroundColor="#443e42" Orientation="Horizontal">
+            <StackLayout BackgroundColor="#dcb34a" WidthRequest="60" HeightRequest="60">
+                <Image Source="close.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="30"></Image>
+                <Button Text="close" Clicked="Close"></Button>
+            </StackLayout>
 
-            <StackLayout BackgroundColor="#443e42">
+            <Label Text="Search" TextColor="#fff" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
 
-           </StackLayout>
-                   
         </StackLayout>
-        <StackLayout Margin="10" BackgroundColor="#fff">
+        <StackLayout Margin="10" Padding="10" BackgroundColor="#fff">
             <Label Text="Search" TextColor="#666"/>
                 <SearchBar x:Name="MainSearchBar"
                            TextChanged="Search"/>
         </StackLayout>
         <StackLayout Margin="10" Padding="5" BackgroundColor="#fff">
-        <ListView  x:Name="ProductslistView" HasUnevenRows="True" 
-               ItemTapped="Product_ItemTapped">
+        <ListView  x:Name="ProductslistView" HasUnevenRows="True"> 
+              <!-- ItemTapped="Product_ItemTapped"-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding Img}" WidthRequest="50" Margin="5"/>
+                            <Image Source="{Binding ImageProduct}" WidthRequest="50" Margin="5"/>
                                 <StackLayout  Padding="5">
-                                <Label Text="{Binding Name}"
+                                <Label Text="{Binding NameProduct}"
                                 TextColor="#000" />
-                                <Label Text="{Binding Status}"
+                                <Label Text="{Binding StatusProduct}"
                                 TextColor="#999" />
-                                <Label Text="{Binding Price}"
+                                <Label Text="{Binding PriceProduct}"
                                 TextColor="#000" />
                             </StackLayout>
                         </StackLayout>

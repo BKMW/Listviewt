@@ -6,9 +6,9 @@ namespace Listview
 {
     class Product
     {
-        public String Img { get; set; }
-        public String Name { get; set; }
-        public String Status { get; set; }
-        public String Price { get; set; }
+        public String ImageProduct { get; set; }
+        public String NameProduct { get; set; }
+        public String StatusProduct { get; set; }
+        public String PriceProduct { get; set; }
     }
 }
