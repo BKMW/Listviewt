@@ -13,8 +13,9 @@ namespace Listview
 		{
 			InitializeComponent();
 
-			MainPage = new Listview.MainPage();
-		}
+            //MainPage = new Listview.MainPage();
+		    MainPage = new NavigationPage(new MainPage());
+        }
 
 		protected override void OnStart ()
 		{

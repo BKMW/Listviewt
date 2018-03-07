@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Listview
 {
-	public partial class MainPage : ContentPage
+	public partial class MainPage
 	{
         //private string keyword;
         private List<Product> products = new List<Product>
@@ -61,24 +61,27 @@ namespace Listview
 
         }// end constructor
 
-       /* public async void Product_ItemTapped(object sender, ItemTappedEventArgs e)
+        public async void Product_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var product = e.Item as Product;
-            await DisplayAlert("Current product", "Product is:" + product.NameProduct, "Ok");
-        }*/
+           /* await DisplayAlert("Current product", "Product is:" + product.NameProduct, "Ok");*/
+            await Navigation.PushModalAsync(new Detail(product));
+        }
 
         public void Search(object sender, EventArgs e)
         {
             var keyword = MainSearchBar.Text;
-            IEnumerable<Product> searchReasult = products.Where<Product>(product=>product.NameProduct.ToLower().Contains(keyword.ToLower()));
+            IEnumerable<Product> searchReasult = products.Where(product=>product.NameProduct.ToLower().Contains(keyword.ToLower()));
            
             ProductslistView.ItemsSource = searchReasult;
         }
 	    public void Close(object sender, EventArgs e)
 	    {
-	        //DisplayAlert("closed","ok","ok");
-	        //Navigation.RemovePage(this);
-	    }
+            //DisplayAlert("closed","ok","ok");
+            //Navigation.RemovePage(this);
+	        //await Navigation.PopModalAsync();
+            System.Environment.Exit(0);
+        }
 
     }
 }

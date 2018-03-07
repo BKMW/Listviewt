@@ -7,8 +7,8 @@
     <StackLayout>
         <StackLayout BackgroundColor="#443e42" Orientation="Horizontal">
             <StackLayout BackgroundColor="#dcb34a" WidthRequest="60" HeightRequest="60">
-                <Image Source="close.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="30"></Image>
-                <Button Text="close" Clicked="Close"></Button>
+                <!--Image Source="close.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="30"></-->
+                <Button  Clicked="Close" WidthRequest="60" HeightRequest="60" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#dcb34a" Image="close1.png"></Button>
             </StackLayout>
 
             <Label Text="Search" TextColor="#fff" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
@@ -19,9 +19,9 @@
                 <SearchBar x:Name="MainSearchBar"
                            TextChanged="Search"/>
         </StackLayout>
-        <StackLayout Margin="10" Padding="5" BackgroundColor="#fff">
-        <ListView  x:Name="ProductslistView" HasUnevenRows="True"> 
-              <!-- ItemTapped="Product_ItemTapped"-->
+        <StackLayout Margin="10" Padding="5" BackgroundColor="#fff" VerticalOptions="FillAndExpand">
+            <ListView  x:Name="ProductslistView" HasUnevenRows="True"
+                 ItemTapped="Product_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

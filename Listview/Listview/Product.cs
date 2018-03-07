@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Listview
 {
-    class Product
+    public class Product
     {
         public String ImageProduct { get; set; }
         public String NameProduct { get; set; }
